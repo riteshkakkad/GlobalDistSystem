@@ -1,0 +1,261 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="OperatorMaster.master.cs"
+    Inherits="Operators_OperatorMaster" %>
+<%@ Import Namespace="Entities" %>
+<%@ Import Namespace="DataAccessLayer" %>
+<%@ Import Namespace="BusinessLayer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="Iesi.Collections" %>
+<%@ Import Namespace="NHibernate" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Book helicopters, turbo props, private jets online - Airnetz Global Distribution
+        System GDS</title>
+    <meta name="keywords" content="Private Jet Charters, Turbo Prop Charters and Helicopter Charters in India, USA, Europe, Middle East, South Africa and Asia Pacific, Book helicopters, turbo props, private jets online - Airnetz Global Distribution System GDS" />
+    <meta name="description" content="Private Jet Charters, Turbo Prop Charters and Helicopter Charters in India, USA, Europe, Middle East, South Africa and Asia Pacific, Book helicopters, turbo props, private jets online - Airnetz Global Distribution System GDS" />
+    <link href="<%= ResolveUrl("~/css/layout.css")%>" media="all" rel="Stylesheet" type="text/css" />
+    <style type="text/css">
+a.selected
+{
+    color: #e7710b;
+    text-decoration:none;
+    font-size:13px;
+    border:1px solid #e7710b;
+    padding:5px;
+    font-weight:bold;  
+   
+}
+ 
+</style>
+
+    <script type="text/javascript" src="<%= ResolveUrl("~/scripts/global.js")%>">
+    </script>
+
+    <asp:contentplaceholder id="scriptholder" runat="server">
+     
+        </asp:contentplaceholder>
+
+    <script type="text/javascript">
+        function echeck(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){		   
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		     return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+	                return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    return false
+		 }
+		
+		 if (str.indexOf(" ")!=-1){
+		    return false
+		 }
+
+ 		 return true					
+	}
+
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+function jsddm_open()
+{	jsddm_canceltimer();
+	jsddm_close();
+	ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
+
+function jsddm_close()
+{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+function jsddm_timer()
+{	closetimer = window.setTimeout(jsddm_close, timeout);}
+
+function jsddm_canceltimer()
+{	if(closetimer)
+	{	window.clearTimeout(closetimer);
+		closetimer = null;}}
+
+$(document).ready(function()
+{	
+    $('#jsddmmenu > li').bind('mouseover', jsddm_open);
+	$('#jsddmmenu > li').bind('mouseout',  jsddm_timer);	
+	
+});
+
+document.onclick = jsddm_close;  
+    </script>
+
+</head>
+<body>
+    <div id="fullsection">
+        <div id="topsection" style="margin-bottom: 15px;">
+            <div class="airnetz-charter-logo" style="float: left; margin-right: 20px;">
+            </div>
+            <div style="float: left;">
+                <div style="margin-top: 10px;" class="airnetz-contactno">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th align="left" style="padding-right: 0px; vertical-align: top">
+                                    <img src="<%=ResolveUrl("~/images/Phone.gif")%>" alt="" style="margin-right: 5px;" /></th>
+                                <th style="padding-right: 20px; vertical-align: top">
+                                    CONTACT US :</th>
+                                <th align="left" valign="top" style="padding-right: 10px; vertical-align: top;">
+                                    USA :
+                                </th>
+                                <td style="padding-right: 25px; vertical-align: top">
+                                    <% foreach (String s in AdminDAO.GetCountryByID("US").ContactNos.Trim().Split(",".ToCharArray()))
+                                       {
+                                    %>
+                                    <div>
+                                        <%= s.Trim() %>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                                <th align="left" style="padding-right: 10px; vertical-align: top;">
+                                    INDIA :
+                                </th>
+                                <td style="padding-right: 25px; vertical-align: top">
+                                    <% foreach (String s in AdminDAO.GetCountryByID("IN").ContactNos.Trim().Split(",".ToCharArray()))
+                                       {
+                                    %>
+                                    <div>
+                                        <%= s.Trim() %>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                                <th align="left" style="vertical-align: top; padding-right: 10px;">
+                                    UK :
+                                </th>
+                                <td style="vertical-align: top">
+                                    <% foreach (String s in AdminDAO.GetCountryByID("GB").ContactNos.Trim().Split(",".ToCharArray()))
+                                       {
+                                    %>
+                                    <div>
+                                        <%= s.Trim() %>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="width: 650px">
+                    
+                    <div style="margin-top: 10px; float: right;">
+                    <span style="font-weight:bold;margin-right:15px;">Operator Section</span>
+                        <% Operator op = OperatorBO.GetLoggedinOperator();
+                           if (op != null)
+                           {
+                        %>
+                        Logged in as
+                        <%= op.CompanyName %>
+                        <a href="logout.aspx" style="margin-left: 10px;" class="small-link">Logout</a>
+                        <%
+                            }
+                              
+                              
+                        %>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div style="margin-top: 10px; width: 650px">
+                    <% String page = System.IO.Path.GetFileName(System.Web.HttpContext.Current.Request.Url.AbsolutePath).ToLower(); %>
+                    <div style="float: right">
+                        <ul class="jsddmmenu">
+                            <li><a href="ShowRequests.aspx" class="<%= (page=="showrequests.aspx")? "selected" : "" %>">
+                                Charter Requests</a> </li>
+                            <li><a href="Aircrafts.aspx" class="<%= (page=="aircrafts.aspx")? "selected" : "" %>">
+                                My Aircrafts</a> </li>
+                            <li><a href="ShowEmptyLegs.aspx" class="<%= (page=="showemptylegs.aspx" || page=="emptylegedit.aspx")? "selected" : "" %>">
+                                Empty Legs</a>
+                                <ul>
+                                    <li><a href="showemptylegs.aspx">My Empty Legs</a></li>
+                                    <li><a href="EmptyLegEdit.aspx">Add Empty Leg</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="FixedPriceCharters.aspx" class="<%= (page=="fixedpricecharters.aspx" || page=="fixedpricecharteredit.aspx")? "selected" : "" %>">
+                                Fixed Price Charter</a>
+                                <ul>
+                                    <li><a href="FixedPriceCharters.aspx">My Fixed Price Charters</a></li>
+                                    <li><a href="FixedPriceCharterEdit.aspx">Add Fixed Price Charter</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="Settings.aspx" style="border-right: 1px solid #c0c0c0" class="<%= (page=="settings.aspx")? "selected" : "" %>">
+                                Settings</a> </li>
+                        </ul>
+                    </div>
+                    <div class='clear'>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="contentsection">
+            <div class="rnd_container">
+                <b class="rnd_top"><b class="rnd_b1"></b><b class="rnd_b2"></b><b class="rnd_b3"></b>
+                    <b class="rnd_b4"></b></b>
+                <div class="rnd_content" id="content">
+                    <asp:ContentPlaceHolder ID="contentholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <b class="rnd_bottom"><b class="rnd_b4" style="background: #FFFFFF"></b><b class="rnd_b3"
+                    style="background: #FFFFFF"></b><b class="rnd_b2" style="background: #FFFFFF"></b>
+                    <b class="rnd_b1"></b></b>
+            </div>
+        </div>
+        <div id="footer">
+            <div>
+                <a href="http://www.airnetz.com/airnetz/book_can_pol.html">Booking &amp; Cancellation
+                    Policy</a> <a href="http://www.airnetz.com/airnetz/paymentops.html">Payment Option</a>
+                <a href="http://www.airnetz.com/airnetz/news.html">Media Coverage</a> <a href="http://www.airnetz.com/airnetz/research.html">
+                    Research</a> <a href="http://www.airnetz.com/airnetz/contacts.asp">Contact us</a>
+                <a href="http://www.airnetz.com/airnetz/terms.html">Terms &amp; Conditions</a>
+            </div>
+            <div style="margin-top: 5px;">
+                <%= copyright.Trim() %>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6247980-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

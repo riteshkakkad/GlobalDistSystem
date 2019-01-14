@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.EmptyLegOffer, App_Code" table="EmptyLegOffers" lazy="false">
+    <id name="ID" column="ID">
+      <generator class="native" />
+    </id>
+    <property name="BidAmount"  />
+   
+    <property name="IsAgent"  />
+    <property name="TimeOfOffer"  />
+    <property name="Status"  />
+   
+    <many-to-one name="Customer" column="CustomerID" class="Entities.Customer,App_Code" />
+    <many-to-one name="Agent" column="AgentID" class="Entities.Agent,App_Code" />
+    <many-to-one name="Currency" column="Currency" class="Entities.Currency,App_Code" not-null="true" />
+    <many-to-one name="EmptyLeg" column="EmptyLegID"  class="Entities.EmptyLeg,App_Code" not-null="true" />
+    <filter name="allemptylegoffers" condition=":Status != Status"/>
+
+  </class>
+  <filter-def name="allemptylegoffers">
+    <filter-param name="Status" type="Int32"/>
+  </filter-def>
+</hibernate-mapping>

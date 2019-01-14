@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+
+  <class name="Entities.Operator, App_Code" table="Operators" lazy="false">
+    <id name="OperatorId" column="OperatorID">
+      <generator class="native" />
+    </id>
+    <property name="CompanyName" type="String" column="CompanyName"/>
+    <property name="Address" column="Address"/>
+    <property name="ContactNo" type="String" column="ContactNo"/>
+    <property name="Email" type="String" column="Email"/>
+    <property name="ContactNo1" type="String" column="ContactNo1"/>
+    <property name="Email1" type="String" column="Email1"/>
+    <property name="NSOPRegNo" type="String" column="NSOPRegNo"/>
+    <property name="License" type="String" column="License"/>
+    <property name="OperatorShortName" column="OperatorShortName"/>
+    <property name="Status" column="Status"/>
+    <property name="Cancel0To24" column="Cancel0To24"/>
+    <property name="Cancel24To48" column="Cancel24To48"/>
+    <property name="Cancel48To72" column="Cancel48To72"/>
+    <property name="CancelMoreThan72" column="CancelMoreThan72"/>
+    <property name="Country" column="Country"/>
+    <property name="Password" column="Password"/>
+
+
+    <property name="OperatorCountries" type="Helper.StringListUserType, App_Code" />
+    <set name="Aircrafts" inverse="true" cascade="all-delete-orphan">
+      <key column="OperatorID"/>
+      <one-to-many class="Entities.Airplane,App_Code"/>
+      <filter name="allaircrafts" condition=":Status != Status" />
+    </set>
+    <filter name="alloperators" condition=":Status != Status"/>
+
+  </class>
+  <filter-def name="alloperators">
+    <filter-param name="Status" type="Int32"/>
+  </filter-def>
+</hibernate-mapping>

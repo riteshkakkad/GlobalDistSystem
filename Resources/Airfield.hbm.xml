@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+<class name="Entities.Airfield, App_Code" table="Airfields" lazy="false">
+<id name="ICAOCODE">
+ <generator class="assigned" />
+</id>
+
+<property name="AirfieldName" />
+<property name="NS" />
+<property name="LattitudeDegrees" />
+<property name="LattitudeMinutes" />
+<property name="EW" />
+<property name="LongitudeDegrees" />
+<property name="LongitudeMinutes" />
+<property name="Altitude" />
+<property name="Runway" />
+<property name="Country" />
+<property name="City" />
+<property name="State" />
+<property name="IATACode" />
+<property name="AlternativeNames" />
+</class>
+</hibernate-mapping>

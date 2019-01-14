@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.Country, App_Code" table="Countries" lazy="false">
+    <id name="CountryID">
+      <generator class="assigned" />
+    </id>
+
+    <property name="FullName" />
+    <property name="Continent" />
+    <property name="Signature" />
+    <property name="PricingDisclaimer" />
+    <property name="CopyRight" />
+    <property name="SendBidToCustomer" />
+    <property name="SendRequestToOperator" />
+    <property name="Margin" />
+    <property name="ContactNos" />
+
+    
+    <many-to-one name="Currency" column="CurrencyID" class="Entities.Currency,App_Code" />
+  </class>
+
+</hibernate-mapping>

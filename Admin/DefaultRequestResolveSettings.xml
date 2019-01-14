@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<requestresolve>
+  <regionmatch>
+    <all>false</all>
+    <allinoperatedcountries>true</allinoperatedcountries>
+    <startingoperatedcountries>false</startingoperatedcountries>
+    <aircraftpresentinstartlocation>false</aircraftpresentinstartlocation>
+  </regionmatch>
+  <aircraftcategorymatch>
+    <parentmatch>true</parentmatch>
+    <exactmatch>false</exactmatch>
+    <all>false</all>
+  </aircraftcategorymatch>
+</requestresolve>

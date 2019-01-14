@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.AirplaneType, App_Code" table="AirplaneTypes" lazy="false">
+    <id name="PlaneTypeID">
+      <generator class="assigned" />
+    </id>
+    <property name="PlaneTypeName" />
+    <property name="InitialDistance" />
+    <property name="MiddleDistance" />
+    <property name="InitialSpeed" />
+    <property name="MiddleSpeed" />
+    <property name="MaximumSpeed" />
+
+    <property name="Capacity" />
+  
+    <property name="ParentCategory" />
+
+    <set name="AirplaneTypeRates" inverse="true" cascade="all-delete-orphan">
+      <key column="PlaneTypeID"/>
+      <one-to-many class="Entities.AirplaneTypeRate,App_Code"/>
+    </set>
+  </class>
+</hibernate-mapping>

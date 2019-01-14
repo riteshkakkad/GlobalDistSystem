@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.BookRequest, App_Code" table="BookRequests" lazy="false">
+    <id name="BookID">
+      <generator class="native" />
+    </id>
+    <property name="TripType" column="TripType"/>
+
+    <many-to-one name="PlaneType" column="PlaneType" class="Entities.AirplaneType,App_Code" not-null="true" />
+    <component name="ContactDetails" class="Entities.Contact,App_Code">
+      <property name="Name" type="String" column="Name"/>
+      <property name="Email" type="String" column="Email"/>
+      <property name="Phone" type="String" column="Phone"/>
+      <property name="Description" type="String" column="Description"/>
+    </component>
+    <property name="Budget"  />
+    <property name="FinalBudget"  />
+    <property name="PAX" column="NoofPassengers" />
+    <property name="Status" column="Status" />
+    <property name="TimeofCreation" column="TimeStamp" />
+    <set name="Legs" inverse="true" cascade="save-update" order-by="Sequence asc">
+      <key column="BookID"/>
+      <one-to-many class="Entities.Leg,App_Code"/>
+    </set>
+    <property name="IsAgent" column="IsAgent" />
+    <many-to-one name="Domain" column="Domain" class="Entities.Country,App_Code" />
+    <many-to-one name="FixedPriceCharter" column="FixedPriceCharterID" class="Entities.FixedPriceCharter,App_Code" />
+    <property name="Code" column="Code" />
+    <many-to-one name="Agent" column="AgentID" class="Entities.Agent,App_Code" />
+    <many-to-one name="AcceptedBid" column="BidID" class="Entities.OperatorBid,App_Code" />
+    <filter name="allrequests" condition=":Status != Status"/>
+  </class>
+  <filter-def name="allrequests">
+    <filter-param name="Status" type="Int16"/>
+  </filter-def>
+</hibernate-mapping>

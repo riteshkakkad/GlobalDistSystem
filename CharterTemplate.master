@@ -1,0 +1,410 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CharterTemplate.master.cs"
+    Inherits="CharterTemplate" %>
+<%@ Import Namespace="Entities" %>
+<%@ Import Namespace="DataAccessLayer" %>
+<%@ Import Namespace="BusinessLayer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="Iesi.Collections" %>
+<%@ Import Namespace="NHibernate" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="Helper" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Book helicopters, turbo props, private jets online - Airnetz Global Distribution
+        System GDS</title>
+    <meta name="keywords" content="Private Jet Charters, Turbo Prop Charters and Helicopter Charters in India, USA, Europe, Middle East, South Africa and Asia Pacific, Book helicopters, turbo props, private jets online - Airnetz Global Distribution System GDS" />
+    <meta name="description" content="Private Jet Charters, Turbo Prop Charters and Helicopter Charters in India, USA, Europe, Middle East, South Africa and Asia Pacific, Book helicopters, turbo props, private jets online - Airnetz Global Distribution System GDS" />
+    <link href="<%= ResolveUrl("~/css/layout.css")%>" media="all" rel="Stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<%= ResolveUrl("~/scripts/global.js")%>">
+    </script>
+
+    <script type="text/javascript">
+    $.preloadImages("<%= ResolveUrl("~/images/indicator.gif") %>","<%= ResolveUrl("~/images/loadingAnimation.gif") %>","<%= ResolveUrl("images/bg_btn.jpg") %>");
+  
+    </script>
+
+    <asp:contentplaceholder id="scriptholder" runat="server">
+     
+        </asp:contentplaceholder>
+    <!--[if IE]>
+<style>
+fieldset {
+	position: relative;
+	padding-top:40px;
+	margin-bottom:15px;
+	margin-top:20px;
+	}
+legend {
+	position: absolute;
+	top: -1em;
+	left: .2em;
+	
+	}
+</style>
+  
+<![endif]-->
+
+    <script type="text/javascript">
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+function jsddm_open()
+{	jsddm_canceltimer();
+	jsddm_close();
+	ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
+
+function jsddm_close()
+{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+function jsddm_timer()
+{	closetimer = window.setTimeout(jsddm_close, timeout);}
+
+function jsddm_canceltimer()
+{	if(closetimer)
+	{	window.clearTimeout(closetimer);
+		closetimer = null;}}
+
+$(document).ready(function()
+{	$('#jsddm > li').bind('mouseover', jsddm_open);
+	$('#jsddm > li').bind('mouseout',  jsddm_timer);
+	$('#jsddmmenu > li').bind('mouseover', jsddm_open);
+	$('#jsddmmenu > li').bind('mouseout',  jsddm_timer);	
+	
+	});
+
+document.onclick = jsddm_close;
+function scrollTo(selector) {
+        var targetOffset = $(selector).offset().top;
+        $('html,body').animate({scrollTop: targetOffset}, 500);
+    }
+function echeck(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){		   
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		     return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+	                return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    return false
+		 }
+		
+		 if (str.indexOf(" ")!=-1){
+		    return false
+		 }
+
+ 		 return true					
+	}
+
+
+    </script>
+
+</head>
+<body>
+    <% Customer cust = CustomerBO.GetLoggedInCustomer();
+       Agent check = AgentBO.GetLoggedInAgent();
+    %>
+    <div id="fullsection">
+        <div id="topsection" style="margin-bottom: 15px;">
+            <div class="airnetz-charter-logo" style="float: left; margin-right: 20px;">
+            </div>
+            <div style="float: left">
+                <div>
+                    <div class="airnetz-keywords" style="float: left;">
+                        <h1 class="heading" style="margin-top: 10px; margin-bottom: 0px">
+                            Helicopter Charter | Turbo Prop Charter | Private Jet Charter</h1>
+                        <div class="heading-italic" style="padding-top: 15px">
+                            "First Global Distribution System For Private Jet Industry."
+                        </div>
+                    </div>
+                    <div style="float: left;">
+                        <div class="tabs22">
+                            <ul>
+                                <li><a href="~/quickquote.aspx" title="Home" id="home" runat="server"><span>Home</span></a></li>
+                                <li><a href="~/Operators/Login.aspx" title="Operators" id="operators" runat="server">
+                                    <span>Operators</span></a></li>
+                                <li><a href="~/Agent/Login.aspx" title="Agents" id="agents" runat="server"><span>Agents</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div style="margin-top: 10px; text-align: center;">
+                            <% String country = Session["Country"].ToString(); %>
+                            <% Country selected = AdminDAO.GetCountryByID(country); %>
+                            <div style="margin-right: 5px; margin-left: 10px; margin-top: 3px; width: 210px;
+                                text-align: left">
+                                <div style="float: left; margin-right: 10px">
+                                    Country :
+                                    <%= selected.FullName %>
+                                </div>
+                                <div style="float: left;">
+                                    <ul id="jsddm">
+                                        <li><a href="#" onclick="return false;">Change
+                                            <img src="<%=ResolveUrl("~/images/dropdown.gif")%>" style="border-style: none" /></a>
+                                            <ul>
+                                                <% 
+                                                    foreach (Country c in AdminDAO.GetFranchiseCountries())
+                                                    {
+                                                        String temp = c.CountryID;
+                                                %>
+                                                <li><a href="<%=ResolveUrl("~/changecountry.ashx?c="+ c.CountryID) %>">
+                                                    <%= c.FullName %>
+                                                </a></li>
+                                                <%
+                                                    }%>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div style="margin-top: 5px; margin-left: 10px" class="airnetz-contactno">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th align="left" style="padding-right: 0px; vertical-align: top">
+                                    <img src="<%=ResolveUrl("~/images/Phone.gif")%>" alt="" style="margin-right: 5px;" /></th>
+                                <th style="padding-right: 20px; vertical-align: top">
+                                    TELE-BOOKING :</th>
+                                <th align="left" valign="top" style="padding-right: 10px; vertical-align: top;">
+                                    USA :
+                                </th>
+                                <td style="padding-right: 25px; vertical-align: top">
+                                    <% foreach (String s in AdminDAO.GetCountryByID("US").ContactNos.Trim().Split(",".ToCharArray()))
+                                       {
+                                    %>
+                                    <div>
+                                        <%= s.Trim() %>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                                <th align="left" style="padding-right: 10px; vertical-align: top;">
+                                    INDIA :
+                                </th>
+                                <td style="padding-right: 25px; vertical-align: top">
+                                    <% foreach (String s in AdminDAO.GetCountryByID("IN").ContactNos.Trim().Split(",".ToCharArray()))
+                                       {
+                                    %>
+                                    <div>
+                                        <%= s.Trim() %>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                                <th align="left" style="vertical-align: top; padding-right: 10px;">
+                                    UK :
+                                </th>
+                                <td style="vertical-align: top">
+                                    <% foreach (String s in AdminDAO.GetCountryByID("GB").ContactNos.Trim().Split(",".ToCharArray()))
+                                       {
+                                    %>
+                                    <div>
+                                        <%= s.Trim() %>
+                                    </div>
+                                    <%
+                                        }
+                                    %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <% if (cust == null && check == null)
+                       { %>
+                    <div style="text-align: right; margin-top: -5px">
+                        <a href="<%= ResolveUrl("~/Customer/Login.aspx")%>" class="small-link">Customer Sign
+                            in</a>
+                    </div>
+                    <%} %>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <% String page = System.IO.Path.GetFileName(System.Web.HttpContext.Current.Request.Url.AbsolutePath).ToLower(); %>
+        <% 
+            if (Session["AgentID"] != null || check != null)
+            {
+                Agent a = null;
+                if (Session["AgentID"] == null)
+                    a = check;
+                else
+                    a = AgentDAO.FindAgentByID((long)Session["AgentID"]);
+
+                Boolean temp = false;
+                if (check != null && a.Equals(check))
+                {
+                    temp = true;
+                }
+        %>
+        <div id="agentsection" style="border: 1px solid #c0c0c0; font-size: 13px; padding: 5px;
+            margin-bottom: 10px;">
+            <div class="brown" style="font-weight: bold; float: left; font-size: 14px">
+                Welcome
+                <%= a.Agency %>
+            </div>
+            <div style="text-align: right; float: right; color: #707070">
+                Contact <strong>
+                    <%= a.Name %>
+                </strong>on <strong>
+                    <%= a.ContactNo %>
+                </strong>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <% if (check != null)
+               { %>
+            <div style="margin-top: 5px;">
+                <ul class="jsddmmenu">
+                    <li><a href="<%=ResolveUrl("~/Agent/ShowRequests.aspx")%>" class="<%= (page=="showrequests.aspx")? "selected" : "" %>">
+                        Show My Requests</a> </li>
+                    <li><a href="<%=ResolveUrl("~/Agent/ShowBids.aspx")%>" class="<%= (page=="showbids.aspx")? "selected" : "" %>">
+                        Show Operator Bids</a> </li>
+                    <li><a href="<%=ResolveUrl("~/EmptyLegs.aspx")%>" class="<%= (page=="emptylegs.aspx")? "selected" : "" %>">
+                        Empty Legs</a> </li>
+                    <li><a href="<%=ResolveUrl("~/FixedPriceCharters.aspx")%>" class="<%= (page=="fixedpricecharters.aspx" )? "selected" : "" %>">
+                        Fixed Price Charters</a> </li>
+                    <li><a href="<%=ResolveUrl("~/Agent/Settings.aspx")%>" style="border-right: 1px solid #c0c0c0"
+                        class="<%= (page=="settings.aspx")? "selected" : "" %>">Edit Personal Details</a>
+                    </li>
+                </ul>
+                <div style="float: right; margin-right: 20px;">
+                    <% if (temp)
+                       {
+                    %>
+                    <a href="<%=ResolveUrl("~/Agent/Logout.aspx")%>" class="small-link" style="margin-left: 15px;">
+                        Logout</a>
+                    <%
+                        }
+                        else
+                        {%>
+                    <a href="<%=ResolveUrl("~/Agent/Login.aspx")%>" class="small-link" style="margin-left: 15px;">
+                        Agent Sign in</a>
+                    <%
+                   
+                        } %>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <%} %>
+        </div>
+        <%
+            } %>
+        <% 
+            if (cust != null)
+            {
+                    
+        %>
+        <div id="customersection" style="border: 1px solid #c0c0c0; font-size: 13px; padding: 5px;
+            margin-bottom: 10px;">
+            <div class="brown" style="font-weight: bold; float: left; font-size: 14px">
+                Welcome
+                <%= cust.Name %>
+            </div>
+            <div style="float: right; margin-right: 10px;">
+                <span style="font-size: 11px">
+                    <%= DateTime.Now.ToString("f", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")) %>
+                </span><a href="<%=ResolveUrl("~/Customer/Logout.aspx")%>" class="small-link" style="margin-left: 15px;">
+                    Logout</a>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div>
+            <div style="text-align: right; float: left; color: #707070; margin-bottom: 10px">
+                <ul class="jsddmmenu">
+                    <li><a href="<%=ResolveUrl("~/Customer/ShowRequests.aspx")%>" class="<%= (page=="showrequests.aspx")? "selected" : "" %>">
+                        Show My Requests</a> </li>
+                    <li><a href="<%=ResolveUrl("~/Customer/ShowBids.aspx")%>" class="<%= (page=="showbids.aspx")? "selected" : "" %>">
+                        Show Operator Bids</a> </li>
+                    <li><a href="<%=ResolveUrl("~/EmptyLegs.aspx")%>" class="<%= (page=="emptylegs.aspx")? "selected" : "" %>">
+                        Empty Legs</a> </li>
+                    <li><a href="<%=ResolveUrl("~/FixedPriceCharters.aspx")%>" class="<%= (page=="fixedpricecharters.aspx" )? "selected" : "" %>">
+                        Fixed Price Charters</a> </li>
+                   
+                    <li><a href="<%=ResolveUrl("~/Customer/Settings.aspx")%>" style="border-right: 1px solid #c0c0c0"
+                        class="<%= (page=="settings.aspx")? "selected" : "" %>">Edit Personal Details</a>
+                    </li>
+                </ul>
+            </div>
+            <div class='clear'>
+            </div>
+        </div>
+        <%
+            } %>
+        <div id="contentsection">
+            <div class="rnd_container">
+                <b class="rnd_top"><b class="rnd_b1"></b><b class="rnd_b2"></b><b class="rnd_b3"></b>
+                    <b class="rnd_b4"></b></b>
+                <div class="rnd_content" id="content">
+                    <asp:ContentPlaceHolder ID="contentholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <b class="rnd_bottom"><b class="rnd_b4" style="background: #FFFFFF"></b><b class="rnd_b3"
+                    style="background: #FFFFFF"></b><b class="rnd_b2" style="background: #FFFFFF"></b>
+                    <b class="rnd_b1"></b></b>
+            </div>
+        </div>
+        <div id="footer">
+            <div>
+                <a href="http://www.airnetz.com/airnetz/book_can_pol.html">Booking &amp; Cancellation
+                    Policy</a> <a href="http://www.airnetz.com/airnetz/paymentops.html">Payment Option</a>
+                <a href="http://www.airnetz.com/airnetz/news.html">Media Coverage</a> <a href="http://www.airnetz.com/airnetz/research.html">
+                    Research</a> <a href="http://www.airnetz.com/airnetz/contacts.asp">Contact us</a>
+                <a href="http://www.airnetz.com/airnetz/terms.html">Terms &amp; Conditions</a>
+            </div>
+            <div style="margin-top: 5px;">
+                <%= copyright.Trim() %>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6247980-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

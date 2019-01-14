@@ -1,0 +1,158 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs"
+    Inherits="AdminMaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <link href="../css/adminlayout.css" media="all" rel="Stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../scripts/global.js">
+    </script>
+
+    <asp:contentplaceholder id="scriptholder" runat="server">
+    </asp:contentplaceholder>
+
+    <script type="text/javascript">
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+function jsddm_open()
+{	jsddm_canceltimer();
+	jsddm_close();
+	ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
+
+function jsddm_close()
+{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+function jsddm_timer()
+{	closetimer = window.setTimeout(jsddm_close, timeout);}
+
+function jsddm_canceltimer()
+{	if(closetimer)
+	{	window.clearTimeout(closetimer);
+		closetimer = null;}}
+
+$(document).ready(function()
+{	$('#jsddm > li').bind('mouseover', jsddm_open);
+	$('#jsddm > li').bind('mouseout',  jsddm_timer);});
+
+document.onclick = jsddm_close;
+
+function scrollTo(selector) {
+        var targetOffset = $(selector).offset().top;
+        $('html,body').animate({scrollTop: targetOffset}, 500);
+    }
+function scrollToThickbox(selector) {
+        var targetOffset = $(selector).offset().top;
+        $('#TB_window').animate({scrollTop: targetOffset}, 500);
+    }
+function echeck(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){		   
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		     return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+	                return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    return false
+		 }
+		
+		 if (str.indexOf(" ")!=-1){
+		    return false
+		 }
+
+ 		 return true					
+	}
+    
+    
+    </script>
+
+</head>
+<body class="<%= bodyclass %>">
+    <div id="fullsection">
+        <div id="topsection" style="margin-bottom: 15px;">
+            <div class="airnetz-charter-logo" style="float: left; margin-right: 20px;">
+            </div>
+            <div style="float: right; margin-top: 20px">
+                <div>
+                    <ul id="jsddm">
+                        <li><a href="customers.aspx">Customers</a> </li>
+                        <li><a href="Agents.aspx">Agents</a> </li>
+                        <li><a href="operators.aspx">Operators</a>
+                            <ul>
+                                <li><a href="operators.aspx">Show Operators</a></li>
+                                <li><a href="AddOperators.aspx">Add Operator</a></li>
+                                <li><a href="ShowEmptyLegs.aspx">Show Empty Legs</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="AirplaneTypes.aspx">Plane Types</a>
+                            <ul>
+                                <li><a href="AirplaneTypes.aspx">Show Plane types</a></li>
+                                <li><a href="AirplaneTypeRates.aspx">Manage Rates</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="Currencies.aspx">Currencies</a> </li>
+                        <li><a href="settings.aspx">Settings</a>
+                            <ul>
+                                <li><a href="Settings.aspx">Admin Settings</a></li>
+                                <li><a href="EmailSettings.aspx">Email Settings</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="ShowAirfields.aspx">Airfields</a>
+                            <ul>
+                                <li><a href="ShowAirfields.aspx">Show Airfields</a></li>
+                                <li><a href="AddAirfields.aspx">Add Airfield</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="showbookrequests.aspx">Book Requests</a> </li>
+                    </ul>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div style="text-align: right">
+                    <p style="text-align: right; margin-top: 10px">
+                        <span style="margin-top: 10px; margin-right: 20px; font-size: 14px; text-align: center;
+                            color: #e7710b; font-weight: bold">Admin Section</span> <a href="Logout.aspx">Logout</a></p>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="contentsection">
+            <div class="rnd_container">
+                <b class="rnd_top"><b class="rnd_b1"></b><b class="rnd_b2"></b><b class="rnd_b3"></b>
+                    <b class="rnd_b4"></b></b>
+                <div class="rnd_content" id="content">
+                    <asp:ContentPlaceHolder ID="contentholder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <b class="rnd_bottom"><b class="rnd_b4" style="background: #FFFFFF"></b><b class="rnd_b3"
+                    style="background: #FFFFFF"></b><b class="rnd_b2" style="background: #FFFFFF"></b>
+                    <b class="rnd_b1"></b></b>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

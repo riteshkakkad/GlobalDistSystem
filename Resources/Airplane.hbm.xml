@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+ 
+  <class name="Entities.Airplane, App_Code" table="Aircrafts" lazy="false">
+    <id name="AircraftId" column="AircraftID">
+      <generator class="native" />
+    </id>
+
+    <property name="AircraftName" type="String" column="AircraftName" />
+    <property name="PassengerCapacity" column="Capacity" />
+    <property name="BaggageCapacity" column="BaggageCapacity" />
+    <property name="Crew" column="Crew" />
+    <property name="Pilots" column="Pilots" />
+    <property name="Status" />
+
+    <many-to-one name="AircraftType" column="AircraftType" class="Entities.AirplaneType,App_Code" not-null="true" />
+    <property name="AircraftLocation" type="String" column="AircraftLocation" />
+    <many-to-one name="Vendor" column="OperatorID" class="Entities.Operator,App_Code" not-null="true" />
+    <property name="PricePerHour" />
+    <many-to-one name="Currency" column="CurrencyID" class="Entities.Currency,App_Code" />
+    <set name="PhotoList" inverse="true" cascade="all-delete-orphan">
+      <key column="AircraftID"/>
+      <one-to-many class="Entities.AircraftPhoto,App_Code"/>
+    </set>
+    <filter name="allaircrafts" condition=":Status != Status" />
+  </class>
+  <filter-def name="allaircrafts">
+    <filter-param name="Status" type="Int16" />
+  </filter-def>
+</hibernate-mapping>

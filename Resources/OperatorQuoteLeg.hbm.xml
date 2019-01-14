@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.OperatorQuoteLeg, App_Code" table="OperatorQuoteLegs" lazy="false">
+    <id name="OperatorQuoteLegID">
+      <generator class="native" />
+    </id>
+    <many-to-one name="OperatorQuote" column="OperatorQuoteID" class="Entities.OperatorQuote,App_Code" not-null="true" />
+    <many-to-one name="Source" column="Source" class="Entities.Airfield,App_Code" not-null="true" />
+    <many-to-one name="Destination" column="Destination" class="Entities.Airfield,App_Code" not-null="true" />
+    <property name="Sequence" column="Sequence" />
+    <property name="FlyingTime" column="FlyingTime" />
+    <property name="DepartsAt" column="DepartsAt" />
+  </class>
+</hibernate-mapping>

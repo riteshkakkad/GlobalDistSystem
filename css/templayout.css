@@ -1,0 +1,766 @@
+﻿body
+{
+    font-size: 11px;
+    color: #707070;
+}
+iframe
+{
+    font-size: 11px;
+    color: #707070;
+}
+
+select,input,textarea
+{
+     font-size:11px;font-family:Verdana;color:#707070;padding:2x 5px;
+}
+a
+{
+    color:#707070;
+}
+.readonly
+{
+    overflow: visible;
+    border-style: none;
+    background-color: transparent;
+}
+.airnetz-keywords h1.heading
+{
+    font-size: 13px;
+    color: #707070;
+}
+.airnetz-keywords div.heading-italic
+{
+    font-size: 12px;
+    color: #e7710b;
+    font-style: italic;
+    text-align: center;
+}
+.airnetz-charter-logo
+{
+    background: url(     '../images/airnetz-charter-logo.gif' );
+    width: 200px;
+    height: 99px;
+}
+#fullsection
+{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Verdana;
+}
+.tabs22
+{
+    font: bold 11px Verdana;
+    float: left;
+    background: #FFFFFF;
+    line-height: normal;
+}
+.tabs22 ul
+{
+    margin: 0;
+    padding: 10px 0px 0 10px;
+    list-style: none;
+}
+.tabs22 li
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+.tabs22 a
+{
+    float: left;
+    background: url(     "../images/tableft22.gif" ) no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 5px;
+    text-decoration: none;
+}
+.tabs22 a span
+{
+    float: left;
+    display: block;
+    background: url(     "../images/tabright22.gif" ) no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    color: #24618E;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.tabs22 a span
+{
+    float: none;
+}
+/* End IE5-Mac hack */
+.tabs22 a:hover span, .tabs22 a.selected span
+{
+    color: #FFF;
+}
+.tabs22 a:hover, .tabs22 a.selected
+{
+    background-position: 0% -42px;
+}
+.tabs22 a:hover span, .tabs22 a.selected span
+{
+    background-position: 100% -42px;
+}
+#footer a
+{
+    margin-right: 10px;
+    font-size: 11px;
+    color: #e7710b;
+    font-family: Verdana;
+}
+#footer
+{
+    margin-top: 20px;
+    color: #888888;
+    text-align: center;
+    font-size: 10px;
+    font-family: Verdana;
+}
+.rnd_container
+{
+    background: #FFFFFF;
+    margin: 1px;
+}
+
+.rnd_top, .rnd_bottom
+{
+    display: block;
+    background: #FFFFFF;
+    font-size: 1px;
+}
+.rnd_b1, .rnd_b2, .rnd_b3, .rnd_b4
+{
+    display: block;
+    overflow: hidden;
+}
+.rnd_b1, .rnd_b2, .rnd_b3
+{
+    height: 1px;
+}
+.rnd_b2, .rnd_b3, .rnd_b4
+{
+    background: #edeeed;
+    border-left: 1px solid #C0C0C0;
+    border-right: 1px solid #C0C0C0;
+}
+.rnd_b1
+{
+    margin: 0 5px;
+    background: #C0C0C0;
+}
+.rnd_b2
+{
+    margin: 0 3px;
+    border-width: 0 2px;
+}
+.rnd_b3
+{
+    margin: 0 2px;
+}
+.rnd_b4
+{
+    height: 2px;
+    margin: 0 1px;
+}
+
+.rnd_content
+{
+    display: block;
+    border: 0 solid #C0C0C0;
+    border-width: 0 1px;
+    padding: 10px;
+    background: #FFFFFF;
+    font-size: 11px;
+    background-image: url(../images/gradientlightgray.png);
+    background-repeat: repeat-x;
+    font-family: verdana;
+}
+#content
+{
+    height: 400px;
+    min-height: 400px;
+}
+html > body #content
+{
+    height: auto;
+    min-height: 400px;
+}
+.leg
+{
+    padding: 10px;
+}
+.leg div.leghead
+{
+    color: #e7710b;
+    font-size: 13px;
+    font-weight: bold;
+}
+.airnetz-contactno td, .airnetz-contactno th
+{
+    vertical-align: bottom;
+}
+fieldset
+{
+    display: block;
+    color: #707070;
+    background:white;
+    font-family: Verdana;
+    font-size: 11px;
+    margin: 10px;
+    border: 1px solid #c0c0c0;
+    padding: 10px;
+
+}
+.cell
+{
+    width: 210px;
+    float: left;
+}
+.divrow
+{
+    padding: 10px;
+}
+textarea
+{
+    color: #707070;
+}
+.boldcell
+{
+    font-weight: bold;
+    float: left;
+    width: 100px;
+}
+.boldtext
+{
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.airnetz-lists ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.airnetz-lists li
+{
+    background-image: url(../images/bullet-airnetz.gif);
+    background-repeat: no-repeat;
+    padding: 5px 0px 0px 35px;
+    height: 40px;
+    vertical-align: middle;
+    margin: 10px;
+}
+.clear
+{
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+.small-link
+{
+    font-size: 11px;
+    color: #e7710b;
+    text-decoration:none;
+}
+.big-link
+{
+    font-weight: bold; 
+    color: white; 
+    text-decoration: none;
+    text-align:center;
+    padding: 5px; 
+    background: url('../images/linkbutton.jpg') repeat-x;
+    border:1px solid #666666;
+    font-size:13px;
+
+ }
+
+ 
+.small-link:hoover
+{
+    text-decoration:underline;
+}
+.bigheading
+{
+    font-size: 16px;
+    font-weight: bold;
+    color: #e7710b;
+}
+.error
+{
+    color: #e7710b !important;
+    font-size:11px;
+}
+legend
+{
+    padding:5px 8px;
+    font-size: 13px;
+    
+    color: white;
+    border:1px solid #c0c0c0;
+
+    font-family: Verdana;
+    background: url('../images/linkbutton.jpg') repeat-x;
+}
+.buttons
+{
+    font-size: 11px;
+    color:#e7710b;
+    font-weight: bold;
+    font-family: Verdana;
+    height: 25px;
+    text-align: center;
+    background-image: url(../images/bg_btn.jpg);
+    border: 1px solid #9d9c9c;
+}
+.bluetable
+{
+ border: 1px solid #c0c0c0;
+ border-spacing: 0px; 
+ border-collapse: collapse;
+}
+
+.bluetable th
+{
+ background:#f8f8f8;
+ font-weight:bold;
+ padding:10px;
+ color: #707070; 
+ border-bottom:1px solid #c0c0c0;
+ border-right:1px solid #c0c0c0;
+ text-align:left;
+ vertical-align:top;
+
+} 
+.bluetable td
+{
+ background:white;
+ padding:15px 10px 15px 10px;
+ border-bottom:1px solid #c0c0c0;
+ border-right:1px solid #c0c0c0;
+ vertical-align:top;
+  color: #707070;
+
+}
+.noborder tr td,.noborder tr th
+{
+    border-bottom-style:none ;
+    border-right-style:none;
+    text-align:left;
+}
+
+.brown
+{
+    color:#e7710b;
+}
+.noborder tr td
+{
+     border-bottom-style:none;
+    border-right-style:none;
+}
+.redlinkbutton
+{
+    font-size: 11px; 
+    font-weight: bold; 
+    color: white; 
+    text-decoration: none;
+    text-align:center;
+    padding: 5px; 
+    background: url('../images/linkbutton.jpg') repeat-x;
+    border:1px solid #666666;
+}
+
+
+
+
+#jsddm
+{	margin: 0;
+	padding: 0}
+
+	#jsddm li
+	{	float: left;
+		list-style: none;
+		font: 10px Verdana;}
+
+	#jsddm li a
+	{	display: block;
+		background: white;
+		padding: 2px 2px;
+		text-decoration: none;
+		border: 1px solid #707070;
+		width: 55px;
+		color: #707070;
+		white-space: nowrap}
+
+	#jsddm li a:hover
+	{	background: #24313C}
+		
+		#jsddm li ul
+		{	margin: 0;
+			padding: 0;
+			position: absolute;
+			visibility: hidden;
+			border-top: 1px solid #24313C;}
+		
+			#jsddm li ul li
+			{	float: none;
+				display: inline}
+			
+			#jsddm li ul li a
+			{	width: auto;
+				background: white;
+				color: #24313C;
+				padding:3px;
+				}
+			
+			#jsddm li ul li a:hover
+			{	background: #24313C;
+			    color:white;
+			    }
+
+label
+{
+    padding-left:5px;
+    padding-right:10px;
+}
+
+.edit,.editdate,.edittime,.editdate,.edittext,.editcountries,.editplane,.editselectstatus,.editcurrency
+{
+   background-image:url(../images/doubleclickedit.png) !important;
+   background-position:right bottom !important;
+   background-repeat:no-repeat !important;
+}
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 11px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}
+
+
+table.jCalendar {
+	border: 1px solid #000;
+	background: #aaa;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+table.jCalendar th {
+	background: #333;
+	color: #fff;
+	font-weight: bold;
+	padding: 3px 5px;
+}
+table.jCalendar td {
+	background: #ccc;
+	color: #000;
+	padding: 3px 5px;
+	text-align: center;
+}
+table.jCalendar td.other-month {
+	background: #ddd;
+	color: #aaa;
+}
+table.jCalendar td.today {
+	background: #666;
+	color: #fff;
+}
+table.jCalendar td.selected {
+	background: #f66;
+	color: #fff;
+}
+table.jCalendar td.selected:hover {
+	background: #f33;
+	color: #fff;
+}
+table.jCalendar td:hover, table.jCalendar td.dp-hover {
+	background: #fff;
+	color: #000;
+}
+table.jCalendar td.disabled, table.jCalendar td.disabled:hover {
+	background: #bbb;
+	color: #888;
+}
+
+/* For the popup */
+
+/* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
+
+div.dp-popup {
+	position: relative;
+	background: #ccc;
+	font-size: 10px;
+	font-family: arial, sans-serif;
+	padding: 2px;
+	width: 171px;
+	line-height: 1.2em;
+}
+div#dp-popup {
+	position: absolute;
+	z-index: 199;
+}
+div.dp-popup h2 {
+	font-size: 12px;
+	text-align: center;
+	margin: 2px 0;
+	padding: 0;
+}
+a#dp-close {
+	font-size: 11px;
+	padding: 4px 0;
+	text-align: center;
+	display: block;
+}
+a#dp-close:hover {
+	text-decoration: underline;
+}
+div.dp-popup a {
+	color: #000;
+	text-decoration: none;
+	padding: 3px 2px 0;
+}
+div.dp-popup div.dp-nav-prev {
+	position: absolute;
+	top: 2px;
+	left: 4px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-prev a {
+	float: left;
+}
+/* Opera needs the rules to be this specific otherwise it doesn't change the cursor back to pointer after you have disabled and re-enabled a link */
+div.dp-popup div.dp-nav-prev a, div.dp-popup div.dp-nav-next a {
+	cursor: pointer;
+}
+div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled {
+	cursor: default;
+}
+div.dp-popup div.dp-nav-next {
+	position: absolute;
+	top: 2px;
+	right: 4px;
+	width: 100px;
+}
+div.dp-popup div.dp-nav-next a {
+	float: right;
+}
+div.dp-popup a.disabled {
+	cursor: default;
+	color: #aaa;
+}
+div.dp-popup td {
+	cursor: pointer;
+}
+div.dp-popup td.disabled {
+	cursor: default;
+}
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> global settings needed for thickbox <<<-----------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+*{margin: 0;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox specific link and font settings <<<------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_window {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+#TB_secondLine {
+	font: 10px Arial, Helvetica, sans-serif;
+	color:#666666;
+}
+
+#TB_window a:link {color: #666666;}
+#TB_window a:visited {color: #666666;}
+#TB_window a:hover {color: #000;}
+#TB_window a:active {color: #666666;}
+#TB_window a:focus{color: #666666;}
+
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_overlay {
+	position: fixed;
+	z-index:100;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+}
+
+.TB_overlayMacFFBGHack {background: url(macFFBgHack.png) repeat;}
+.TB_overlayBG {
+	background-color:#000;
+	filter:alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+}
+
+* html #TB_overlay { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_window {
+	position: fixed;
+	background: #ffffff;
+	z-index: 102;
+	color:#000000;
+	display:none;
+	border: 4px solid #525252;
+	text-align:left;
+	top:50%;
+	left:50%;
+}
+
+* html #TB_window { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_window img#TB_Image {
+	display:block;
+	margin: 15px 0 0 15px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+}
+
+#TB_caption{
+	height:25px;
+	padding:7px 30px 10px 25px;
+	float:left;
+}
+
+#TB_closeWindow{
+	height:25px;
+	padding:11px 25px 10px 0;
+	float:right;
+}
+
+#TB_closeAjaxWindow{
+	padding:7px 10px 5px 0;
+	margin-bottom:1px;
+	text-align:right;
+	float:right;
+}
+
+#TB_ajaxWindowTitle{
+	float:left;
+	padding:7px 0 5px 10px;
+	margin-bottom:1px;
+}
+
+#TB_title{
+	background-color:#e8e8e8;
+	height:27px;
+}
+
+#TB_ajaxContent{
+	clear:both;
+	padding:2px 15px 15px 15px;
+	overflow:auto;
+	text-align:left;
+	line-height:1.4em;
+}
+
+#TB_ajaxContent.TB_modal{
+	padding:15px;
+}
+
+#TB_ajaxContent p{
+	padding:5px 0px 5px 0px;
+}
+
+#TB_load{
+	position: fixed;
+	display:none;
+	height:13px;
+	width:208px;
+	z-index:103;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+
+* html #TB_load { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_HideSelect{
+	z-index:99;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	height:100%;
+	width:100%;
+}
+
+* html #TB_HideSelect { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_iframeContent{
+	clear:both;
+	border:none;
+	margin-bottom:-1px;
+	margin-top:1px;
+	_margin-bottom:1px;
+}

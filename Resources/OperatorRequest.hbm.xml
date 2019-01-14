@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.OperatorRequest, App_Code" table="OperatorRequests" lazy="false">
+    <id name="OperatorRequestID" column="OperatorRequestID">
+      <generator class="native" />
+    </id>
+
+    <many-to-one name="Request" column="BookID" class="Entities.BookRequest,App_Code" not-null="true" />
+    <many-to-one name="Operator" column="OperatorID" class="Entities.Operator,App_Code" not-null="true" />
+    <property name="TimeOfRequest" column="TimeOfRequest" />
+    <property name="Status" />
+    <filter name="alloperatorrequests" condition=":Status != Status"/>
+  </class>
+  <filter-def name="alloperatorrequests">
+    <filter-param name="Status" type="Int16"/>
+  </filter-def>
+</hibernate-mapping>

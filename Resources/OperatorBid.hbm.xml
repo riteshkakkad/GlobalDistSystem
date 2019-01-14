@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.OperatorBid, App_Code" table="OperatorBids" lazy="false">
+    <id name="BidID" column="BidID">
+      <generator class="native" />
+    </id>
+    <property name="BidAmount"  />
+    <property name="AdditionalDetails"  />
+    <property name="TimeOfBid"  />
+    <property name="FinalBidAmount"  />
+    <property name="Status"  />
+
+    <many-to-one name="Aircraft" column="AircraftID" class="Entities.Airplane,App_Code" not-null="true" />
+    <many-to-one name="Operator" column="OperatorID" class="Entities.Operator,App_Code" not-null="true" />
+    <many-to-one name="Request" column="RequestID" class="Entities.BookRequest,App_Code" not-null="true" />
+    <many-to-one name="Currency" column="CurrencyID" class="Entities.Currency,App_Code" not-null="true" />
+    <filter name="allbids" condition=":Status != Status"/>
+  </class>
+  <filter-def name="allbids">
+    <filter-param name="Status" type="Int16"/>
+  </filter-def>
+</hibernate-mapping>

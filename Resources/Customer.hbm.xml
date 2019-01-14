@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.Customer, App_Code" table="Customers" lazy="false">
+    <id name="CustomerID" column="CustomerID">
+      <generator class="native" />
+    </id>
+    <property name="Name" column="Name"/>
+    <property name="Email" column="Email"/>
+    <property name="Country" column="Country"/>
+    <property name="ContactNo" column="ContactNo"/>
+    <property name="Email1" column="Email1"/>
+    <property name="Password" />
+    <property name="ContactNo1" column="ContactNo1"/>
+    <property name="Address" column="Address"/>
+    <property name="CompanyName" column="CompanyName"/>
+    <property name="Status" />
+    <filter name="allcustomers" condition=":Status != Status" />
+
+  </class>
+  <filter-def name="allcustomers">
+    <filter-param name="Status" type="Int32" />
+  </filter-def>
+</hibernate-mapping>

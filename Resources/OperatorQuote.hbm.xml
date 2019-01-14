@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.OperatorQuote, App_Code" table="OperatorQuotes" lazy="false">
+    <id name="OperatorQuoteID">
+      <generator class="native" />
+    </id>
+    <many-to-one name="Request" column="BookID" class="Entities.BookRequest,App_Code" not-null="true" />
+    <many-to-one name="Aircraft" column="AircraftID" class="Entities.Airplane,App_Code" />
+
+    <property name="FinalAmount" column="FinalAmount" />
+    <property name="AirnetzAmount" column="AirnetzAmount" />
+    <property name="NightHaltCharge" />
+    <property name="NightHalts" />
+    <property name="DayHaltCharge" />
+    <property name="DayHalts" />
+    <property name="CrewCharge" />
+    <property name="Crew" />
+    <property name="FacilityFees" />
+    <property name="LandingFees" />
+    <property name="ServiceTax" />
+    <property name="MinimumFlyingHours" />
+    <property name="CancellationChargeHoursMoreThan72" column="CancelMoreThan72" />
+    <property name="CancellationChargeHours48To72" column="Cancel48To72" />
+    <property name="CancellationChargeHours24To48" column="Cancel24To48" />
+    <property name="CancellationChargeHours0To24" column="Cancel0To24" />
+    <property name="InternationalServiceCharges" column="InternationalServiceCharges" />
+    <property name="InvoiceFileName" column="InvoiceFileName" />
+    <property name="InvoiceToCustomer" column="InvoiceToCustomer" />
+    <property name="Pilots" column="Pilots" />
+    <property name="Baggage" column="Baggage" />
+    <property name="Currency" column="Currency" />
+    <set name="OperatorLegs" inverse="true" cascade="save-update" order-by="Sequence asc">
+      <key column="OperatorQuoteID"/>
+      <one-to-many class="Entities.OperatorQuoteLeg,App_Code"/>
+    </set>
+
+
+  </class>
+</hibernate-mapping>

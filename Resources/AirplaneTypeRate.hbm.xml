@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true">
+  <class name="Entities.AirplaneTypeRate, App_Code" table="PlaneTypeRates" lazy="false">
+    <id name="RateID">
+      <generator class="native" />
+    </id>
+
+    <property name="HourlyRate" />
+    <property name="WaitingCharge" />
+    <property name="FuelPositioning" />
+    <property name="NightHalt" />
+    <property name="Crew" />
+    <property name="WatchHour" />
+
+    <many-to-one name="Country" column="Country" class="Entities.Country,App_Code"  />
+    <many-to-one name="PlaneType" column="PlaneTypeID" class="Entities.AirplaneType,App_Code"  />
+
+    
+  </class>
+</hibernate-mapping>

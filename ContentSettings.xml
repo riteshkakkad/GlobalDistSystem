@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<main>
+  <defaults>
+    <pricingdisclaimer>*Pricing disclaimer: All prices quoted are computer generated estimates. Final Quote will depend on availability of aircraft,actual flying time and type of aircraft used. Additional charges such as parking, hangar, facility use fees, customs, deicing, international operations charges, handling fees, flight phone use, catering, etc. are billed as incurred. After reviewing your trip requirements, an Airnetz Charter Inc. specialist will contact you to discuss the details of your trip. All flights are operated by non schedule operators certified under Federal Aviation Regulations Part 135 or Part 121 as issued by the Federal Aviation Administration.</pricingdisclaimer>
+    <copyright>© 2008 Airnetz Charter Inc. flightpool.com, airnetz.com and their logos are trademark of Airnetz Charter Inc. and are used under license. Airnetz Charter Inc. DOES NOT OWN, MAINTAIN or OPERATE AIRCRAFTS. AIRNETZ IS NOT A DIRECT OR INDIRECT AIR CARRIER. AIRNETZ is an online and offline travel information, scheduling and transaction service. All Charter Flight Services within USA are offered and provided by third party Federally licensed direct air carriers, certified under Federal Aviation Regulations Part 135 or Part 121 as issued by the Federal Aviation Administration.</copyright>
+    <signature>
+      <font style="font-family: Verdana;" face="trebuchet ms">
+        Regards,<br />
+        <br />
+      </font>
+      <b style="font-family: Verdana;">
+        Team Airnetz<br />
+      </b>
+      <b style="font-family: Verdana;">
+        <img style="width: 174px; height: 86px;" alt="" title="" class="yui-img" src="http://www.airnetzcharter.com/images/main.gif" />
+      </b>
+      <br />
+      <br />
+      <b style="font-family: Verdana;">
+        <br />
+        INDIA :<br />
+        Airnetz Aviation Pvt. Ltd.<br />
+        Business Jet Charters - Helicopter Charters - Turbo Prop
+        Charters<br />
+        TELE-BOOKING<br />
+        India Cell : 91 9930403019<br />
+        Land Line : 91 22 28079043 / 28631151<br />
+        Fax No : 91 22 39167424<br />
+        <br />
+        USA :<br />
+        Airnetz Charter Inc.<br />
+        4867 Ashford Dunwoody Road<br />
+        #8111 Atlanta GA 30338<br />
+        Phone : 1 608 554 0461<br />
+        <br />
+        UK :<br />
+        Airnetz Charter Inc.<br />
+        Phone : 442081448025<br />
+        <br />
+        <a class="" href="http://www.airnetz.com/" target="_blank"></a><a class="" href="http://www.airnetzcharter.com/" target="_blank">www.airnetzcharter.com</a><br />
+        <br />
+        <br />
+      </b>
+
+
+
+    </signature>
+    <margin>20</margin>
+    <sendrequesttooperator>False</sendrequesttooperator>
+    <sendbidtocustomer>False</sendbidtocustomer>
+    <adminemails>nikhil.khekade@gmail.com,nikhilkhekade@yahoo.co.in</adminemails>
+    <emailcss>
+      <style type="text/css">
+        .bluetable
+        {
+        border: 1px solid #c0c0c0;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        }
+
+        .bluetable th
+        {
+        background:#f8f8f8;
+        font-weight:bold;
+        padding:10px;
+        color: #707070;
+        border-bottom:1px solid #c0c0c0;
+        border-right:1px solid #c0c0c0;
+        text-align:left;
+        vertical-align:top;
+
+        }
+        .bluetable td
+        {
+        background:white;
+        padding:15px 10px 15px 10px;
+        border-bottom:1px solid #c0c0c0;
+        border-right:1px solid #c0c0c0;
+        vertical-align:top;
+        color: #707070;
+
+        }
+
+      </style>
+    </emailcss>
+   
+    <adminbookrequestemail></adminbookrequestemail>
+  </defaults>
+</main>
