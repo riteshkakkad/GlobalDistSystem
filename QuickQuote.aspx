@@ -801,7 +801,7 @@ function addCoordinatesToMap(a){
                 </ul>
             </div>
         </fieldset>
-        <fieldset>
+        <!-- <fieldset>
             <legend>Pool Flight</legend>
             <div>
                 Flight pool or Jet pool offers sharing a charter plane with other business executives
@@ -809,7 +809,7 @@ function addCoordinatesToMap(a){
                 <div style="margin-top: 5px;">
                     <a class="small-link" href="http://flightpool.com">Click here to pool a flight</a></div>
             </div>
-        </fieldset>
+        </fieldset> -->
     </div>
     <div class="clear">
     </div>
